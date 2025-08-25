@@ -24,6 +24,7 @@
       padding: 30px 15px;
       min-height: 100vh;
       animation: fadeIn 1s ease-in;
+      position: relative;
     }
 
     @keyframes fadeIn {
@@ -36,6 +37,7 @@
       margin-bottom: 20px;
     }
 
+    /* Background Grid */
     .grid {
       position: absolute;
       top: 0;
@@ -110,6 +112,52 @@
       font-size: 14px;
     }
 
+    /* ⭐ About Section */
+    .about {
+      margin-top: 50px;
+      padding: 30px;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      animation: fadeIn 1s ease-in;
+      position: relative;
+      z-index: 2; /* ✅ fixed */
+    }
+
+    .about h2 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      color: #00ff99;
+    }
+
+    .about p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Beautiful Animated Button */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #00ff99, #00ccff);
+      color: #000;
+      box-shadow: 0 4px 12px rgba(0, 255, 153, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 18px rgba(0, 204, 255, 0.6);
+      background: linear-gradient(135deg, #00ccff, #00ff99);
+    }
+
     @media (max-width: 600px) {
       h2 {
         font-size: 1.5rem;
@@ -123,8 +171,10 @@
   </style>
 </head>
 <body>
-  <h2>🎯 CSS Resizer Playground</h2>
+  <!-- ✅ Grid moved to top -->
   <div class="grid"></div>
+
+  <h2>🎯 CSS Resizer Playground</h2>
   <div id="box"></div>
   <div id="dimensions">Width: 200px | Height: 200px</div>
 
@@ -147,6 +197,20 @@
   </div>
 
   <div id="exportedCode" hidden></div>
+
+  <!-- ⭐ About Section -->
+  <section class="about">
+    <h2>👨‍💻 About the Developer</h2>
+    <p>
+      Hi, I’m <strong>Mohammed Owais</strong>, a BCA student passionate about 
+      <em>web development, problem solving, and cybersecurity</em>.  
+      This project <strong>BoxCraft</strong> was built to help beginners 
+      understand CSS sizing and the box model visually.
+    </p>
+    <a href="https://github.com/MRSE435" target="_blank" class="btn">
+      🔗 Visit My GitHub
+    </a>
+  </section>
 
   <script>
     const box = document.getElementById('box');
